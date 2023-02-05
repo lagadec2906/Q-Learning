@@ -131,11 +131,12 @@ more the grid is difficult : less the number of path to solve the issue is large
 """
 def resolve_maze_process_kpi(start, end, maze_grid):
     print("Resolve maze")
-    maze = adjacence + adjacence.dot(adjacence)
+    maze = adjacence 
+    puissance = adjacence
     # we process all the paths of different length
     for i in range (2,15):
-        puissance = adjacence.dot(adjacence)
         maze = maze + adjacence.dot(puissance)
+        puissance = adjacence.dot(puissance)
     print(maze)   
     # With a starting point a maze point and an exit point we process our KPI 'difficulty'
     print("search" , maze[start][maze_grid])
