@@ -57,7 +57,8 @@ def generate_grid_and_adjacence():
     #  1 | 5 | 9  | 13
     #  2 | 6 | 10 | 14
     #  3 | 7 | 11 | 15
-    #we process Adjacency matrix: our matrix is symetrical ( non-oriented graph )                
+    # We process Adjacency matrix: our matrix is symetrical ( non-oriented graph )
+    # (Adjacency_matrix^N indicates all the path of size N in the map )
     for i in range (0,len(grid_barrier)):
         for j in range (0,len(grid_barrier[0])):
              for k in range (0,len(grid_barrier[0][0])):
@@ -137,6 +138,7 @@ This function will solve the problem of maze.
 The kpi process is number of path which could solve the problem.
 So we introduce basically the following "loss" ;
 more the grid is difficult : less the number of path to solve the issue is large.
+
 """
 def resolve_maze_process_kpi(start, end, treasure_grid):
     print("Resolve maze and find treasure")
@@ -149,9 +151,9 @@ def resolve_maze_process_kpi(start, end, treasure_grid):
     print(maze)   
     # With a starting point a treasure point and an exit point we process our KPI 'difficulty'
     print("search" , maze[start][treasure_grid])
-    print("exit" , maze[treasure][end] )
-    if ( (maze[start][treasure] > 0) & (maze[treasure][end] > 0 ) ) :
-        print("Loss/difficulty of generated grid" , maze[start][treasure]+maze[treasure][end] )
+    print("exit" , maze[treasure_grid][end] )
+    if ( (maze[start][treasure_grid] > 0) & (maze[treasure_grid][end] > 0 ) ) :
+        print("Loss/difficulty of generated grid" , maze[start][treasure_grid]+maze[treasure_grid][end] )
     else :
         print("Impossible to solve")
 
