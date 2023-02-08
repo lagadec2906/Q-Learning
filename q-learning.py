@@ -1,7 +1,7 @@
 import numpy as np
 import random
 
-print("We are lloking for a maze!")
+print("We are looking for a maze!")
 adjacence= np.array([[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -103,7 +103,7 @@ def generate_grid_and_adjacence():
                 
 
 
-                #refilter diag 
+                #refilter diag : we check 4 configurations / per diagonal where two case of maze are not linked
                  #diag sup right
                     if ( (4 * (i) + j +3 < 16) & (i < 3) & (j > 0) ):
                          if  ( ( (grid_barrier[i+1][j-1][0] == 1) & ( grid_barrier[i+1][j-1][3] == 1  ) ) | ( (grid_barrier[i][j][2] == 1) & ( grid_barrier[i][j][1] == 1  ) )  |  ( (grid_barrier[i][j][1] == 1) & ( grid_barrier[i+1][j][1] == 1  ) )  |  ( (grid_barrier[i][j][2] == 1) & ( grid_barrier[i+1][j-1][2] == 1  ) ) ):
